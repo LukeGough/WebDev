@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+  <div class="ui huge header">New Blog</div>
+  <form class="ui form" action="/nuips" method="POST">
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="blog[title]" placeholder="Title" required>
+    </div>
+    <div class="field">
+      <label>Image Url</label>
+      <input type="text" name="blog[image]" placeholder="Image Url">
+    </div>
+    <div class="field">
+      <label>Post Content</label>
+      <textarea name="blog[body]" required></textarea>
+    </div>
+    <input class="ui inverted green button" type="submit">
+  </form>
+</div>
+
+<% include ./partials/footer %>

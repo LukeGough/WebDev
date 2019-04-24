@@ -1,0 +1,36 @@
+<% include partials/header %>
+  <!-- <div class="container"> -->
+    <div class="row">
+       <div class="col-md-3"></div>
+       <div class="col-md-6">
+        <div class="card bg-dark mb-3">
+          <div class="row no-gutters text-white">
+            <div class="col-md-12">
+              <div class="card-header">
+                <h1 class="text-capitalized">Sign Up</h1>  
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters bg-light text-black">
+            <div class="card-body">
+             <div>
+               <form action="/register" method="POST">
+                 <div class="form-group">
+                  <input class="form-control" type="text" name="username" placeholder="username">
+                 </div>
+                 <div class="form-group">
+                   <input class="form-control" <input type="password" name="password" placeholder="password">
+                 </div>
+                 <div class="form-group">
+                   <a class="btn btn-dark" href="/">Back</a>
+                   <button class="btn btn-md btn-success">Sign Up</button>
+                 </div>
+               </form>
+              </div>
+             </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  <!-- </div> -->
+<% include partials/footer %>

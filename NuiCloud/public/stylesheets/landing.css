@@ -1,0 +1,102 @@
+body {
+  background-color: #000;
+}
+
+hr {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+  text-shadow: -1px -1px 0px rgba(0,0,0,0.4),
+               1px 1px 0px rgba(0,0,0,0.1),
+               -1px -1px 0px rgba(0,0,0,0.1),
+               /*1px 1px 0px rgba(0,0,0,0.4);*/
+}
+
+#landing-header h1 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 5em;
+}
+#landing-header h3 {
+  color: #fff;
+}
+
+.landingBtns {
+  max-width: 400px;
+  z-index: 1;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 40s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://images.unsplash.com/photo-1525950649888-ab6903a92765?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b4ded368636a327bbaa27685de4059f8&auto=format&fit=crop&w=1350&q=80) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://images.unsplash.com/photo-1499355940597-5601b9869168?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://images.unsplash.com/photo-1498422586775-096388253518?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://images.unsplash.com/photo-1549755083-2442d1f193a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
+  animation-delay: 30s; 
+}
+/*.slideshow li:nth-child(5) { 
+  background-image: url(https://images.unsplash.com/photo-1525950649888-ab6903a92765?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b4ded368636a327bbaa27685de4059f8&auto=format&fit=crop&w=1350&q=80);
+  animation-delay: 40s; 
+}*/
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+  opacity: 1;
+}

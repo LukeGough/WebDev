@@ -1,0 +1,51 @@
+<% include partials/header %>
+<!--   <div class="container"> -->
+    <header class="jumbotron">
+      <div class="container">
+        <h1>Dashboard</h1>
+        <p>Welcome <strong><%= currentUser.username %></strong> to the NuiCloud Dashboard</p>
+        
+          <% if(currentUser.role == "Admin"){ %>
+            <p>
+              <a class="btn btn-success btn" href="/dashboard/new">Add New Widget</a>
+            </p>
+          <% } else if (!currentUser || currentUser.role != "Admin"){ %>
+          <% } %>
+      </div>
+    </header>
+
+    <div class="row text-left" style="display: flex; flex-wrap: wrap;">
+      <% widgets.forEach(function(widget){ %>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card bg-dark mb-3">
+            <div class="row no-gutters text-white">
+              <!-- <div class="col-md-2">
+                <div class="card-img">
+                  <img src="<%= widget.image %>">
+                </div>
+              </div> -->
+              <!-- <div class="col-md-10"> -->
+              <div class="col-md-12">
+                <div class="card-header">
+                  <h1 class="text-capitalize"> <%= widget.name %></h1>
+                </div>
+              </div>
+            </div>
+            <div class="row no-gutters bg-light text-black">
+              <div class="col-12">
+                <div class="card-body">
+                  <span><strong>Description</strong></span>
+                  <p><%= widget.description %></p>
+                  <span><strong>URL</strong></span>
+                  <p><a href="<%= widget.url %>">Link to <%= widget.name %></a></p>
+                  <hr>
+                  <a class="btn btn-dark" href="/dashboard/<%= widget._id %>">More Info</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+<!--   </div> -->
+<% include partials/footer %>

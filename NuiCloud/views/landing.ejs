@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>NuiCloud</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/stylesheets/landing.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+  </head>
+  <body>
+  <div class="container"> <!-- header/footer container -->
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+    
+    <div id="landing-header">
+      <h1>NuiCloud</h1>
+      <h3>Simplifying the Cloud for Family and Friends</h3>
+      <hr>
+      <!-- <p><a href="/dashboard" class="btn btn-lg btn-info">Dashboard</a></p> -->
+          <div class="landingBtns container">
+            <div class="row">
+              <% if(!currentUser){ %>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">
+                <a href="/login" class="btn btn-lg btn-info">Login</a>
+              </div>
+              <div class="col-sm-3">
+                <a href="/register" class="btn btn-lg btn-info">Sign Up</a>
+              </div>
+              <div class="col-sm-3"></div>
+              <% } else { %>
+              <div class="col-12">
+                <a href="/dashboard" class="btn btn-lg btn-info">Dashboard</a>    
+              </div>
+              <% } %>
+            </div>
+          </div>
+    </div>
+
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+<% include partials/footer %>

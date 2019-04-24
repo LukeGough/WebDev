@@ -1,0 +1,43 @@
+<% include partials/header %>
+  <!-- <div class="container"> -->
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="card bg-dark mb-3">
+          <div class="row no-gutters text-white">
+            <!-- <div class="col-md-2">
+              <div class="card-img">
+                <img class="img-responsive" src="<%= widget.image %>">
+              </div>
+            </div> -->
+            <div class="col-md-12">
+              <div class="card-header">
+                <h1 class="text-capitalize"> <%= widget.name %></h1>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters bg-light text-black">
+            <div class="col-12">
+              <div class="card-body">
+                <span><strong>Description</strong></span>
+                <p><%= widget.description %></p>
+                <span><strong>URL</strong></span>
+                <p><a href="<%= widget.url %>">Link to <%= widget.name %></a></p>
+                <hr>
+                <a class="btn btn-dark" href="/dashboard">Back</a>
+                <% if(currentUser.role == "Admin"){ %>
+                  <a class="btn btn-warning" href="/dashboard/<%= widget._id %>/edit">Edit</a>
+                  <form id="deleteForm" action="/dashboard/<%= widget._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                  </form>
+                <% } else if (!currentUser || currentUser.role != "Admin"){ %>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  <!-- </div> -->
+<% include partials/footer %>
